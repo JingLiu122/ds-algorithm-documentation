@@ -6,7 +6,8 @@ Linked list is a data structure implemented using a **linked structure** to stor
 ## Node Implementation
 
 Linked list node is an object which contains an **element** and a **next** reference node, so it can be created from a class defined as follows in Java:
-`
+
+```
   class Node {
     int element;
     Node next;
@@ -15,7 +16,8 @@ Linked list node is an object which contains an **element** and a **next** refer
       this.element = element;
     }
   }
-`
+```
+  
 Now a node is created, we can inserted into the list and chain any of the incoming additional nodes together to form a linked list. Since a new element can be added to the list, it can also remove an existing element.
 
 ## Insert
