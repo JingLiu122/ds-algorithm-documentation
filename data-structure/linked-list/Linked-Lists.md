@@ -22,11 +22,10 @@ Now that a node is created, we can inserted into the list and chain any addition
 
 
 
-### Figure 1 
-An example in a figure to illustrate that a linked list holds n nodes in sequence: 
+### Figure 1:
 | ![singly linked list diagram](/data-structure/assets/images/figure26.7_linked_list.PNG) |
 |:--:|
-| *A linked list consists of any number of nodes chained together.* |
+| *A linked list consists of any number of (n) nodes chained together.* |
 <br>
 
 
