@@ -18,11 +18,16 @@ Linked list node is an object which contains an **element** and a **next** refer
   }
 ```
   
-Now that a node is created, we can inserted into the list and chain any of the incoming additional nodes together to form a linked list. Since a new element can be added to the list, it can also remove from the list.
+Now that a node is created, we can inserted into the list and chain any additional nodes together to form a linked list. Since a new element can be added to the list, we can also remove it from the list. 
 
-## Step 2: Create a head and tail node
+## Step 2: Declare head and tail
 
+A linked list consists of any number of nodes chained together.
+![singly linked list diagram](/assets/images/)
 
+## Step 3:
+
+## Step 4:
 
 ## Insert
 addFirst(data)
