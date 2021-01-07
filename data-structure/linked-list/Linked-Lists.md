@@ -9,10 +9,10 @@ Linked list node is an object which contains an **element** and a **next** refer
 
 ```java
   class Node {
-    int element;
+    String element;
     Node next;
     
-    public Node(int element) {
+    public Node(String element) {
       this.element = element;
     }
   }
@@ -42,15 +42,63 @@ For example, here's a code snippet to initialize the head and tail to null becau
 
 ## Step 3: Inserting Nodes 
 
+There are three methods that can be inserted a new node into a linked list, and each method have three cases that need to be considered when inserting: when there is/are 0 nodes (the list is empty), 1 node, and n nodes in the list. And the same goes to the removing operation. 
+
+### Code snippet to implement insertion methods:
+#### 1. addFirst(data)
+```java
+  public void addFirst(String element) {
+    Node newNode = new Node(element);
+    newNode.next = head;
+    head = newNode;
+    if(tail == null) tail = head;
+    size++;
+  }
+```
+
+#### 2. addLast(data)
+```java
+  public void addLast(String element) {
+    Node newNode = new Node(element);
+    if(tail == null) {
+      head = tail = newNode;
+    } else {
+      tail.next = newNode;
+      tail = newNode;
+    }
+    size++;
+  }
+```
+
+#### 3. add(index, data)
+```java
+  public void add(int index, String element) {
+    if(index < 0) {
+      System.out.println("Invalid index!");
+      return;
+    } 
+    else if (index == 0) addFirst(element);
+    else if(index >= size) addLast(element);
+    else {
+      Node prevNode = head;
+      
+      for(int i = 1; i < index; i++) {
+        prevNode = prevNode.next;
+      }
+      
+      Node temp = prevNode.next; // current node 
+      prevNode.next = new Node(element);
+      (prevNode.next).next = temp;
+      size++;
+    }
+  }
+```
+
 ### Figure 2
 
 
 ## Step 4: Deleting Nodes
 
-## Insert
-addFirst(data)
-addLast(data)
-add(index, data)
 ## Remove
 removeFirst()
 removeLast()
