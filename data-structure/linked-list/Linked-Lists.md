@@ -21,11 +21,13 @@ Linked list node is an object which contains an **element** and a **next** refer
 Now that a node is created, we can inserted into the list and chain any additional nodes together to form a linked list. Since a new element can be added to the list, we can also remove it from the list. 
 
 
+
 ### Figure 1 
 An example in a figure to illustrate that a linked list holds n nodes in sequence: 
 | ![singly linked list diagram](/data-structure/assets/images/figure26.7_linked_list.PNG) |
 |:--:|
 | *A linked list consists of any number of nodes chained together.* |
+<br>
 
 
 ## Step 2: Declare head and tail
@@ -38,9 +40,11 @@ For example, here's a code snippet to initialize the head and tail to null becau
   Node tail = null;
 ```
 
+
 ## Step 3: Inserting Nodes 
 
 ### Figure 2
+
 
 ## Step 4: Deleting Nodes
 
