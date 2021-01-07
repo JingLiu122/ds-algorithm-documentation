@@ -23,7 +23,7 @@ Now that a node is created, we can inserted into the list and chain any addition
 ## Step 2: Declare head and tail
 
 A linked list consists of any number of nodes chained together.
-![singly linked list diagram](/assets/images/)
+![singly linked list diagram](/assets/images/figure26.7_linked_list.PNG)
 
 ## Step 3:
 
