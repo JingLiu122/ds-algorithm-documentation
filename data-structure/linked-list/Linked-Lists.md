@@ -7,7 +7,7 @@ Linked list is a data structure implemented using a **linked structure** to stor
 
 Linked list node is an object which contains an **element** and a **next** reference node, so it can be created from a class defined as follows in Java:
 
-```
+```java
   class Node {
     int element;
     Node next;
@@ -20,14 +20,29 @@ Linked list node is an object which contains an **element** and a **next** refer
   
 Now that a node is created, we can inserted into the list and chain any additional nodes together to form a linked list. Since a new element can be added to the list, we can also remove it from the list. 
 
+
+### Figure 1 
+An example in a figure to illustrate that a linked list holds n nodes in sequence: 
+| ![singly linked list diagram](/data-structure/assets/images/figure26.7_linked_list.PNG) |
+|:--:|
+| *A linked list consists of any number of nodes chained together.* |
+
+
 ## Step 2: Declare head and tail
 
-A linked list consists of any number of nodes chained together.
-![singly linked list diagram](/data-structure/assets/images/figure26.7_linked_list.PNG)
+First, we need to delcare a head and tail variable to reference the list, so we know where it is store in a memory location; access nodes of the list and modify them.
 
-## Step 3:
+For example, here's a code snippet to initialize the head and tail to null because the list is empty initially:
+```java
+  Node head = null;
+  Node tail = null;
+```
 
-## Step 4:
+## Step 3: Inserting Nodes 
+
+### Figure 2
+
+## Step 4: Deleting Nodes
 
 ## Insert
 addFirst(data)
