@@ -58,7 +58,7 @@ There are three methods that can be inserted a new node into a linked list, as d
 First, create a new node to store the element and inserts the node at the beginning of the list. Then set the `next` variable of the new node references to the head of the list. After the insertion, set `head` points to this new element node. Now this new node is chained together with the list. Last but not least, if the `tail` is null, that means the list is empty (initially), then just set both `tail` and `head` point to this first newly inserted node of the list. Finally increase the size of the linked list by 1. The algorithm is illustrate in the figures below to have a better visual explaination.
 
 ##### Firgure 2.1a
-
+actually use animated gif for better displaying 
 Initially: head and tail -> null
 
 
