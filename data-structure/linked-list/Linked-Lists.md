@@ -1,7 +1,7 @@
 # Linked List 
 # What is a linked list?
 
-Linked list is a data structure implemented using a **linked structure** to store data values in a collection of nodes. In its most *basic form*, each node contains an element and a reference to the next node in the sequence of the list. Then each node of the list is linked to its next neighbor node, from the head to the tail and any number of nodes in between, except the last (tail) node points to null so it can end the list. 
+Linked list is a data structure implemented using a **linked structure** to store data values in a collection of nodes. In its most *basic form*, each node contains an element and a reference to the next node in the sequence of the list. Then each node of the list is linked to its next neighbor node, from the head to the tail and any number of nodes in between, except the last (tail) node points to null so it can end the list, as illustrated in Figure 1. 
 
 ## Step 1: Node Implementation
 
@@ -42,7 +42,7 @@ For example, here's a code snippet to initialize the head and tail to null becau
 
 ## Step 3: Inserting Nodes 
 
-There are three methods that can be inserted a new node into a linked list, and each method have three cases that need to be considered when inserting: when there is/are 0 nodes (the list is empty), 1 node, and n nodes in the list. And the same goes to the removing operation. 
+There are three methods that can be inserted a new node into a linked list,
 
 ### Code snippet to implement insertion methods:
 #### 1. addFirst(data)
@@ -55,6 +55,7 @@ There are three methods that can be inserted a new node into a linked list, and 
     size++;
   }
 ```
+First, create a new node to store the element and inserts the node at the beginning of the list. Then the `next` variable of the new node references to the head of the list. After the insertion, `head` points to this new element node. Now this new node is chained together with the list. Last but not least, if the `tail` is null that means the list is empty initially, then just set both `tail` and `head` point to this first inserted new node of the list. Finally increase the size of the linked list by 1.
 
 #### 2. addLast(data)
 ```java
@@ -71,6 +72,8 @@ There are three methods that can be inserted a new node into a linked list, and 
 ```
 
 #### 3. add(index, data)
+and three cases that need to be considered when inserting (especially at the specified index): when there is/are 0 nodes (the list is empty), 1 node, and n nodes in the list. And the same goes to the removing operation. 
+
 ```java
   public void add(int index, String element) {
     if(index < 0) {
