@@ -55,12 +55,27 @@ There are three methods that can be inserted a new node into a linked list, as d
     size++;
   }
 ```
-First, create a new node to store the element and inserts the node at the beginning of the list. Then set the `next` variable of the new node references to the head of the list. After the insertion, set `head` points to this new element node. Now this new node is chained together with the list. Last but not least, if the `tail` is null, that means the list is empty (initially), then just set both `tail` and `head` point to this first newly inserted node of the list. Finally increase the size of the linked list by 1. The algorithm is illustrate in the figures below to have a better visual explaination.
+First, create a new node to store the element and inserts the node at the beginning of the list. Then set the `next` variable of the new node references to the head of the list. After the insertion, set `head` points to this new element node. Now this new node is chained together with the list. Last but not least, if the `tail` is null, that means the list is empty (initially), then just set both `tail` and `head` point to this first newly inserted node of the list. Finally increase the size of the linked list by 1. 
+
+The algorithm is shown in the figures below to have a better visual explaination:
 
 ##### Firgure 2.1a
-actually use animated gif for better displaying 
-Initially: head and tail -> null
+| ![addFirst before insertion](/data-structure/assets/images/Figure2.1a.PNG) |
+|:--:|
+| *Before a new node is inserted, it is ready to be inserted at the beginning of the list.* |
+<br>
 
+##### Firgure 2.1b
+| ![addFirst while insertion](/data-structure/assets/images/Figure2.1b.PNG) |
+|:--:|
+| *Link the new node with the head.* |
+<br>
+
+##### Firgure 2.1c
+| ![addFirst after insertion](/data-structure/assets/images/Figure2.1c.PNG) |
+|:--:|
+| *After a new node is inserted.* |
+<br>
 
 
 #### 2. addLast(data)
