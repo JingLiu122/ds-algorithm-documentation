@@ -55,7 +55,7 @@ There are three methods that can be inserted a new node into a linked list, as d
     size++;
   }
 ```
-First, create a new node to store the element and inserts the node at the beginning of the list. Then set the `next` variable of the new node references to the head of the list. After the insertion, set `head` points to this new element node. Now this new node is chained together with the list. Last but not least, if the `tail` is null, that means the list is empty (initially), then just set both `tail` and `head` point to this first newly inserted node of the list. Finally increase the size of the linked list by 1. 
+First, this method creates a new node to store the element and inserts the node at the beginning of the list. Then set the `next` variable of the new node references to the head of the list. After the insertion, set `head` points to this new element node. Now this new node is chained together with the list. Last but not least, if the `tail` is null, that means the list is empty (initially), then just set both `tail` and `head` point to this first newly inserted node of the list. Finally increase the size of the linked list by 1. 
 
 The algorithm is shown in the figures below to have a better visual explaination:
 
@@ -91,6 +91,18 @@ The algorithm is shown in the figures below to have a better visual explaination
     size++;
   }
 ```
+This method creates a new node to hold the element and appends at the end of the list. While inserting, there are two cases that need to be considered in here: 
+(1) If it is an empty list, set both set and tail points to this new node. 
+(2) Otherwise, link this new node with the last (tail) node in the list. Then set `tail` points to this new node, so this node becomes the end node of the list.
+Finally, in any case, after the node is created, increase the size by 1.
+
+The algorithm is shown in the figures below to have a better visual explaination:
+
+##### Firgure 2.2.1a
+
+##### Firgure 2.2.1b
+
+##### Firgure 2.2.2a
 
 #### 3. add(index, data)
 and three cases that need to be considered when inserting (especially at the specified index): when there is/are 0 nodes (the list is empty), 1 node, and n nodes in the list. And the same goes to the removing operation. 
