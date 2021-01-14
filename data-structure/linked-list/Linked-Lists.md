@@ -62,7 +62,7 @@ The algorithm is shown in the figures below to have a better visual explaination
 ##### Firgure 2.1a
 | ![addFirst before insertion](/data-structure/assets/images/Figure2.1a.PNG) |
 |:--:|
-| *Before a new node is inserted, it is ready to be inserted at the beginning of the list.* |
+| *Before a new node is inserted at the beginning of the list.* |
 <br>
 
 ##### Firgure 2.1b
@@ -93,7 +93,7 @@ The algorithm is shown in the figures below to have a better visual explaination
 ```
 This method creates a new node to hold the element and appends at the end of the list. While inserting, there are two cases that need to be considered in here: 
 (1) If it is an empty list, set both set and tail points to this new node. 
-(2) Otherwise, link this new node with the last (tail) node in the list. Then set `tail` points to this new node, so this node becomes the end node of the list.
+(2) Otherwise, link this new node with the last (tail) node in the list. Then set `tail` points to this new node, so this node becomes the last node of the list.
 Finally, in any the cases, after the node is created, increase the size by 1.
 
 Better visual explaination with figures:
@@ -104,7 +104,28 @@ Better visual explaination with figures:
 
 #### Case 2:
 ##### Firgure 2.2.2a
+| ![addLast case 2 before insertion](/data-structure/assets/images/Figure2.2.2a.PNG) |
+|:--:|
+| *Before a new node is inserted at the end of the list.* |
+<br>
 
+##### Firgure 2.2.2b
+| ![addLast case 2 during insertion](/data-structure/assets/images/Figure2.2.2b.PNG) |
+|:--:|
+| *Link the new node with the last node in the list.* |
+<br>
+
+##### Firgure 2.2.2c
+| ![addLast case 2 during insertion](/data-structure/assets/images/Figure2.2.2c.PNG) |
+|:--:|
+| *Set tail points to the last node.* |
+<br>
+
+##### Firgure 2.2.2d
+| ![addLast case 2 after insertion](/data-structure/assets/images/Figure2.2.2d.PNG) |
+|:--:|
+| *After a new node is inserted.* |
+<br>
 
 #### 3. add(index, data)
 and three cases that need to be considered when inserting (especially at the specified index): when there is/are 0 nodes (the list is empty), 1 node, and n nodes in the list. And the same goes to the removing operation. 
