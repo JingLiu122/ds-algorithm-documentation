@@ -164,8 +164,15 @@ This method inserts an element into the list at the specified index. However the
 (2) If `index` is greater than or equal to the size of the list, then insert the element at the end of the list, invoke `addLast(data)` this time.
 (3) Otherwise, create a new node to hold the new element and insert it in the middle of the list (at a specific index -- zero-based indexing like in the array). As shown in Figure 2.3a, locate the current node of a specific index position that is going to insert a new element node, and store it to the `temp` node for reference. Then insert it into the list by linking the previous node (`prevNode`) of the located current node to this new node (`newNode`), and then `newNode` links to `temp` to chain them together as a new linked list, as shown in Figure 2.3b. Finally, increase the size of the list by 1.
 
-#### igure 2.3: Better visual explanation to add a new element in the middle of the list.
+#### Figure 2.3: Better visual explanation to add a new element in the middle of the list.
 ##### Figure 2.3a
+| ![add method before insertion](/data-structure/assets/images/Figure2.3a.PNG) |
+|:--:|
+| *Before a new node is inserted* |
+<br>
+
+
+
 
 
 ## Step 4: Deleting Nodes
