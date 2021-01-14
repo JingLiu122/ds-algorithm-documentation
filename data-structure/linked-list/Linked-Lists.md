@@ -99,8 +99,15 @@ Finally, in any the cases, after the node is created, increase the size by 1.
 Better visual explaination with figures:
 #### Case 1:
 ##### Firgure 2.2.1a
-
+| ![addLast case 1 before insertion](/data-structure/assets/images/Figure2.2.1a.PNG) |
+|:--:|
+| *Before a new node is inserted in an empty list.* |
+<br>
 ##### Firgure 2.2.1b
+| ![addLast case 1 after insertion](/data-structure/assets/images/Figure2.2.1b.PNG) |
+|:--:|
+| *After a new node is inserted in an empty list.* |
+<br>
 
 #### Case 2:
 ##### Firgure 2.2.2a
