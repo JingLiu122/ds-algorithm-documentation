@@ -92,11 +92,12 @@ The algorithm is shown in the figures below to have a better visual explaination
   }
 ```
 This method creates a new node to hold the element and appends at the end of the list. While inserting, there are two cases that need to be considered in here: 
-(1) If it is an empty list, set both set and tail points to this new node. 
-(2) Otherwise, link this new node with the last (tail) node in the list. Then set `tail` points to this new node, so this node becomes the last node of the list.
+(1) If it is an empty list, set both set and tail points to this new node, as shown in Fiure 2.2.1a and Figure 2.2.1b.
+(2) Otherwise, link this new node with the last (tail) node in the list. Then set `tail` points to this new node, so this node becomes the last node of the list (shown in Figure 2.2.2a to Figure 2.2.2d).
 Finally, in any the cases, after the node is created, increase the size by 1.
 
-Better visual explaination with figures:
+#### igure 2.2: Better visual explanation to add a new element at the end of the list.
+
 #### Case 1:
 ##### Figure 2.2.1a
 | ![addLast case 1 before insertion](/data-structure/assets/images/Figure2.2.1a.PNG) |
@@ -136,8 +137,6 @@ Better visual explaination with figures:
 <br>
 
 #### 3. add(index, data)
-and three cases that need to be considered when inserting (especially at the specified index): when there is/are 0 nodes (the list is empty), 1 node, and n nodes in the list. And the same goes to the removing operation. 
-
 ```java
   public void add(int index, String element) {
     if(index < 0) {
@@ -160,8 +159,13 @@ and three cases that need to be considered when inserting (especially at the spe
     }
   }
 ```
+This method inserts an element into the list at the specified index. However there are three cases that need to be considered when inserting: 
+(1) If `index` is 0, then the element is going to be inserted at the beginning of the list, invoke `addFirst(data)` to do the work. 
+(2) If `index` is greater than or equal to the size of the list, then insert the element at the end of the list, invoke `addLast(data)` this time.
+(3) Otherwise, create a new node to hold the new element and insert it in the middle of the list (at a specific index -- zero-based indexing like in the array). As shown in Figure 2.3a, locate the current node of a specific index position that is going to insert a new element node, and store it to the `temp` node for reference. Then insert it into the list by linking the previous node (`prevNode`) of the located current node to this new node (`newNode`), and then `newNode` links to `temp` to chain them together as a new linked list, as shown in Figure 2.3b. Finally, increase the size of the list by 1.
 
-### Figure 2
+#### igure 2.3: Better visual explanation to add a new element in the middle of the list.
+##### Figure 2.3a
 
 
 ## Step 4: Deleting Nodes
