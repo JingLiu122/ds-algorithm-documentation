@@ -59,19 +59,19 @@ First, this method creates a new node to store the element and inserts the node 
 
 The algorithm is shown in the figures below to have a better visual explaination:
 
-##### Firgure 2.1a
+##### Figure 2.1a
 | ![addFirst before insertion](/data-structure/assets/images/Figure2.1a.PNG) |
 |:--:|
 | *Before a new node is inserted at the beginning of the list.* |
 <br>
 
-##### Firgure 2.1b
+##### Figure 2.1b
 | ![addFirst while insertion](/data-structure/assets/images/Figure2.1b.PNG) |
 |:--:|
 | *Link the new node with the head.* |
 <br>
 
-##### Firgure 2.1c
+##### Figure 2.1c
 | ![addFirst after insertion](/data-structure/assets/images/Figure2.1c.PNG) |
 |:--:|
 | *After a new node is inserted.* |
@@ -98,37 +98,38 @@ Finally, in any the cases, after the node is created, increase the size by 1.
 
 Better visual explaination with figures:
 #### Case 1:
-##### Firgure 2.2.1a
+##### Figure 2.2.1a
 | ![addLast case 1 before insertion](/data-structure/assets/images/Figure2.2.1a.PNG) |
 |:--:|
 | *Before a new node is inserted in an empty list.* |
 <br>
-##### Firgure 2.2.1b
+
+##### Figure 2.2.1b
 | ![addLast case 1 after insertion](/data-structure/assets/images/Figure2.2.1b.PNG) |
 |:--:|
 | *After a new node is inserted in an empty list.* |
 <br>
 
 #### Case 2:
-##### Firgure 2.2.2a
+##### Figure 2.2.2a
 | ![addLast case 2 before insertion](/data-structure/assets/images/Figure2.2.2a.PNG) |
 |:--:|
 | *Before a new node is inserted at the end of the list.* |
 <br>
 
-##### Firgure 2.2.2b
+##### Figure 2.2.2b
 | ![addLast case 2 during insertion](/data-structure/assets/images/Figure2.2.2b.PNG) |
 |:--:|
 | *Link the new node with the last node in the list.* |
 <br>
 
-##### Firgure 2.2.2c
+##### Figure 2.2.2c
 | ![addLast case 2 during insertion](/data-structure/assets/images/Figure2.2.2c.PNG) |
 |:--:|
 | *Set tail points to the last node.* |
 <br>
 
-##### Firgure 2.2.2d
+##### Figure 2.2.2d
 | ![addLast case 2 after insertion](/data-structure/assets/images/Figure2.2.2d.PNG) |
 |:--:|
 | *After a new node is inserted.* |
