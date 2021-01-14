@@ -1,7 +1,7 @@
 # Linked List 
 # What is a linked list?
 
-Linked list is a data structure implemented using a **linked structure** to store data values in a collection of nodes. In its most *basic form*, each node contains an element and a reference to the next node in the sequence of the list. Then each node of the list is linked to its next neighbor node, from the head to the tail and any number of nodes in between, except the last (tail) node points to null so it can end the list, as shown in Figure 1. 
+Linked list is a data structure implemented using a **linked structure** to store data values in a collection of nodes. Usually, each node contains an element and a reference to the next node in an sequential order of the list. Then each node of the list is linked to its next neighbor node, from the head to the tail and any number of nodes in between, except the last (tail) node is pointed to null so it can end the list, as shown in Figure 1. 
 
 ## Step 1: Node Implementation
 
@@ -19,7 +19,6 @@ Linked list node is an object which contains an **element** and a **next** refer
 ```
   
 Now that a node is created, we can inserted into the list and chain any additional nodes together to form a linked list. Since a new element can be added to the list, we can also remove it from the list. 
-
 
 
 ### Figure 1:
@@ -55,10 +54,9 @@ There are three methods that can be inserted a new node into a linked list, as d
     size++;
   }
 ```
-First, this method creates a new node to store the element and inserts the node at the beginning of the list. Then set the `next` variable of the new node references to the head of the list. After the insertion, set `head` points to this new element node. Now this new node is chained together with the list. Last but not least, if the `tail` is null, that means the list is empty (initially), then just set both `tail` and `head` point to this first newly inserted node of the list. Finally increase the size of the linked list by 1. 
+First, this method creates a new node to store the element and inserts the node at the beginning of the list. Then set the `next` variable of the new node references to the head of the list. After the insertion, set `head` points to this new element node. Now this new node is chained together with the list. Last but not least, if the `tail` is null, that means the list is empty (initial list), then just set both `tail` and `head` point to this first newly inserted node of the list, as shown in Figure 2.1a to Figure 2.1c). Finally increase the size of the linked list by 1. 
 
-The algorithm is shown in the figures below to have a better visual explaination:
-
+#### Figure 2.1: Better visual explanation to add a new element at the beginning of the list.
 ##### Figure 2.1a
 | ![addFirst before insertion](/data-structure/assets/images/Figure2.1a.PNG) |
 |:--:|
@@ -96,7 +94,7 @@ This method creates a new node to hold the element and appends at the end of the
 (2) Otherwise, link this new node with the last (tail) node in the list. Then set `tail` points to this new node, so this node becomes the last node of the list (shown in Figure 2.2.2a to Figure 2.2.2d).
 Finally, in any the cases, after the node is created, increase the size by 1.
 
-#### igure 2.2: Better visual explanation to add a new element at the end of the list.
+#### Figure 2.2: Better visual explanation to add a new element at the end of the list.
 
 #### Case 1:
 ##### Figure 2.2.1a
@@ -136,6 +134,7 @@ Finally, in any the cases, after the node is created, increase the size by 1.
 | *After a new node is inserted.* |
 <br>
 
+
 #### 3. add(index, data)
 ```java
   public void add(int index, String element) {
@@ -162,15 +161,26 @@ Finally, in any the cases, after the node is created, increase the size by 1.
 This method inserts an element into the list at the specified index. However there are three cases that need to be considered when inserting: 
 (1) If `index` is 0, then the element is going to be inserted at the beginning of the list, invoke `addFirst(data)` to do the work. 
 (2) If `index` is greater than or equal to the size of the list, then insert the element at the end of the list, invoke `addLast(data)` this time.
-(3) Otherwise, create a new node to hold the new element and insert it in the middle of the list (at a specific index -- zero-based indexing like in the array). As shown in Figure 2.3a, locate the current node of a specific index position that is going to insert a new element node, and store it to the `temp` node for reference. Then insert it into the list by linking the previous node (`prevNode`) of the located current node to this new node (`newNode`), and then `newNode` links to `temp` to chain them together as a new linked list, as shown in Figure 2.3b. Finally, increase the size of the list by 1.
+(3) Otherwise, create a new node to hold the new element and insert it in the middle of the list (at a specific index -- zero-based indexing like in the array). As shown in Figure 2.3a, locate the current node of a specific index position that is going to insert a new element node, and store it to the `temp` node for reference. Then insert it into the list by linking the previous node (`prevNode`) of the located current node to this new node (`newNode`), and then `newNode` links to `temp` to chain them together as a new linked list, as shown in Figure 2.3b. The final result is shown in Figure 2.3c. Finally, increase the size of the list by 1.
 
 #### Figure 2.3: Better visual explanation to add a new element in the middle of the list.
 ##### Figure 2.3a
 | ![add method before insertion](/data-structure/assets/images/Figure2.3a.PNG) |
 |:--:|
-| *Before a new node is inserted* |
+| *Before a new node is inserted at a specified index position.* |
 <br>
 
+##### Figure 2.3b
+| ![add method during insertion](/data-structure/assets/images/Figure2.3b.PNG) |
+|:--:|
+| *While inserting, prevNode.next links to newNode, and newNode.next links to temp.* |
+<br>
+
+##### Figure 2.3c
+| ![add method after insertion](/data-structure/assets/images/Figure2.3c.PNG) |
+|:--:|
+| *After a new node is inserted at a specified index position.* |
+<br>
 
 
 
