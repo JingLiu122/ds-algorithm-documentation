@@ -138,11 +138,7 @@ Finally, in any the cases, after the node is created, increase the size by 1.
 #### 3. add(index, data)
 ```java
   public void add(int index, String element) {
-    if(index < 0) {
-      System.out.println("Invalid index!");
-      return;
-    } 
-    else if (index == 0) addFirst(element);
+    if (index == 0) addFirst(element);
     else if(index >= size) addLast(element);
     else {
       Node prevNode = head;
@@ -189,5 +185,57 @@ This method inserts an element into the list at the specified index. However the
 
 ## Remove
 removeFirst()
+```java
+  public String removeFirst() {
+    Node temp = head;
+    head = head.next;
+    if(head == null) tail = null;
+    size--;
+    return temp.element;
+  }
+```
+
 removeLast()
+```java
+  public String removeLast() {
+    if(size == 1) {
+      Node temp = tail;
+      head = tail = null;
+      size = 0;
+      return temp.element;
+    } else {
+      Node prevNode = head;
+      
+      for(int i = 0; i < size-2; i++) {
+        prevNode = prevNode.next;
+      }
+      
+      Node temp = tail;
+      tail = prevNode;    // previous node of the last node 
+      tail.next = null;
+      size--;
+      return temp.element;
+    }
+  }
+```
+
 remove(index)
+```java
+  public String remove(index) {
+    if(index < 0 || index >= size) return '-1';
+    else if(index == 0) return removeFirst();
+    else if(index == size-1) return removeLast();
+    else {
+      Node prevNode = head;
+      
+      for(int i = 1; i < index; i++) {
+        prevNode = prevNode.next;
+      }
+      
+      Node temp = prevNode.next;
+      prevNode.next = temp.next;
+      size--;
+      return temp.element;
+    }
+  }
+```
