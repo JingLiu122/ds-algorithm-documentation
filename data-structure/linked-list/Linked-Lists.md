@@ -179,26 +179,43 @@ This method inserts an element into the list at the specified index. However the
 <br>
 
 
-
-
 ## Step 4: Deleting Nodes
 
-## Remove
-removeFirst()
+Removing nodes from the linked list is done by a similar approach as inserting nodes into it. 
+
+### Code snippet to implement deletion methods:
+#### 1. removeFirst()
 ```java
   public String removeFirst() {
-    Node temp = head;
-    head = head.next;
-    if(head == null) tail = null;
-    size--;
-    return temp.element;
+    if(size == 0) {
+      return "-1";
+    } else {
+      Node temp = head;
+      head = head.next;
+      if(head == null) tail = null;
+      size--;
+      return temp.element;
+    }
   }
 ```
+This method removes the first node from the list. But first, there two cases need to be considered:
+1) If the list is empty, there is nothing to delete, so return `-1` for indication.
+2) Otherwise, remove the first node from the list by simply pointing `head` to the second node (`head.next`). But first we need to create a `temp` node to keep the first node of the list temporarily. If when the list becomes empty after a node we just remove, that means there is only one node in the list to remove, then set the tail to `null`. Reduce the size by 1 and finally return the deleted element. shown in Figure 2.3c.
 
-removeLast()
+#### Figure 2.3: Better visual explanation to add a new element in the middle of the list.
+##### Figure 2.3a
+| ![add method before insertion](/data-structure/assets/images/Figure2.3a.PNG) |
+|:--:|
+| *Before a new node is inserted at a specified index position.* |
+<br>
+
+
+#### 2. removeLast()
 ```java
   public String removeLast() {
-    if(size == 1) {
+    if(size == 0) {
+      return "-1";
+    } else if(size == 1) {
       Node temp = tail;
       head = tail = null;
       size = 0;
@@ -219,7 +236,7 @@ removeLast()
   }
 ```
 
-remove(index)
+#### 3. remove(index)
 ```java
   public String remove(index) {
     if(index < 0 || index >= size) return '-1';
@@ -239,3 +256,4 @@ remove(index)
     }
   }
 ```
+next neighbor node
