@@ -258,7 +258,7 @@ This method removes the element of the last node from the list. Consider three c
 ##### Figure 3.2b
 | ![remove last method during deletion](/data-structure/assets/images/Figure3.2b.PNG) |
 |:--:|
-| *Delete the last node from the list.* |
+| *Deleting the last node from the list.* |
 <br>
 
 ##### Figure 3.2c
@@ -292,17 +292,29 @@ This method finds the node at the specified index and then removes it. Consider 
 1) Check the edge cases: if `index` is negative or beyond the range of the list (`index` is zero-based, and `size` is the length of the list like an array), return `-1`.
 2) If `index` is 0, invoke `removeFirst()` to remove the first node from the list.
 3) If `index` is the end position of the list, which is `size - 1`, then invoke `removeLast` to remove the last node from the list. 
-4) Otherwise, traverse the list and locate the node at the specified `index`. Then let `temp` denote this current node that is going to delete, which is `prevNode.next` in the list., as shown in Figure. Next, link the previous node `next` to the current node's next nrighbor, which is to assign `temp.next` to `prevNode.next` to destroy the current node, as shown in Figure 3.3b. Finally, reduce the size by 1 and return the element of the deleted node.  
+4) Otherwise, traverse the list and locate the node at the specified `index`. Then let `temp` denote this current node that is going to delete, which is `prevNode.next` in the list., as shown in Figure 3.3b. Next, link the previous node `next` to the current node's next nrighbor, which is to assign `temp.next` to `prevNode.next` to destroy the current node, as shown in Figure 3.3b. Finally, reduce the size by 1 and return the element of the deleted node.  
 
 #### Figure 3.3: Better visual explanation to remove the node at a specified index
 ##### Figure 3.3a
-| ![remove last method before deletion](/data-structure/assets/images/Figure3.2a.PNG) |
+| ![remove method before deletion](/data-structure/assets/images/Figure3.3a.PNG) |
 |:--:|
-| *Before the node is deleted from the end of the list.* |
+| *Before the node is deleted.* |
 <br>
 
-Variations of Linked Lists
+##### Figure 3.3b
+| ![remove method during deletion](/data-structure/assets/images/Figure3.3b.PNG) |
+|:--:|
+| *Deleting the node from the list.* |
+<br>
 
+##### Figure 3.3c
+| ![remove method after deletion](/data-structure/assets/images/Figure3.3c.PNG) |
+|:--:|
+| *After the node is deleted.* |
+<br>
+
+# Variations of Linked Lists
+The linked list introcuded in the preceding examples is known as singly linked list. There's also doubly linked list, circular linked list, and circular doubly linked list.
 
 
 
