@@ -1,7 +1,11 @@
 # Linked List 
-# Table of Content:
-* [Inserting Nodes](#step-3-inserting-nodes)
-* [Deleting Nodes](#step-4-deleting-nodes)
+|Table of Content:                           |
+| ------------------------------------------ |
+| [Inserting Nodes](#step-3-inserting-nodes) |
+| [addFirst(data)](#1-addfirstdata)          |
+| [addLast(data)](#2-addlastdata)            |
+| [add(index, data)](#3-addindex-data)       |
+| [Deleting Nodes](#step-4-deleting-nodes)   |
 
 # What is a linked list?
 
@@ -45,7 +49,6 @@ For example, here's a code snippet to initialize the head and tail to null becau
 ```
 <br>
 
-# Insertion
 ## Step 3: Inserting Nodes
 
 There are three methods that can be inserted a new node into a linked list, as describe in below examples:
