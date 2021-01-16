@@ -243,7 +243,7 @@ This method removes the element of the first node from the list. But first, ther
     }
   }
 ```
-This method removes the element of the last node from the list. There are three cases need to be considered in here:
+This method removes the element of the last node from the list. Consider three cases:
 1) If the list is empty, return `-1`.
 2) If the list contains only one node, return the element of this node and then destory it by set both `head` and `tail` point to null; Java garbage collection handles the work over here. Then the size of the list becomes 0 after the deletion. 
 3) Otherwise, traverse the list to locate the second-to-last node and reposition `tail` to point to this node, and then set the next of the tail node to null to end the list, as shown in Figure 3.2b. Finally, reduce the size by 1 and return the element of the deleted node. 
@@ -267,6 +267,7 @@ This method removes the element of the last node from the list. There are three 
 | *After the node is deleted from the end of the list.* |
 <br>
 
+
 #### 3. remove(index)
 ```java
   public String remove(index) {
@@ -287,13 +288,18 @@ This method removes the element of the last node from the list. There are three 
     }
   }
 ```
-This method finds the node at the specified index and then removes it. Consider four cases over here:
+This method finds the node at the specified index and then removes it. Consider four cases:
 1) Check the edge cases: if `index` is negative or beyond the range of the list (`index` is zero-based, and `size` is the length of the list like an array), return `-1`.
 2) If `index` is 0, invoke `removeFirst()` to remove the first node from the list.
 3) If `index` is the end position of the list, which is `size - 1`, then invoke `removeLast` to remove the last node from the list. 
-4) Otherwise, traverse the list and locate the node at the specified `index`. Then let `temp` denote this current node that is going to delete, which is `prevNode.next` in the list., as shown in Figure. Next, link the previous node `next` to the current node's next nrighbor, which is to assign `temp.next` to `prevNode.next` to destroy the current node, as shown in Figure. Finally, reduce the size by 1 and return the element of the deleted node.  
+4) Otherwise, traverse the list and locate the node at the specified `index`. Then let `temp` denote this current node that is going to delete, which is `prevNode.next` in the list., as shown in Figure. Next, link the previous node `next` to the current node's next nrighbor, which is to assign `temp.next` to `prevNode.next` to destroy the current node, as shown in Figure 3.3b. Finally, reduce the size by 1 and return the element of the deleted node.  
 
-
+#### Figure 3.3: Better visual explanation to remove the node at a specified index
+##### Figure 3.3a
+| ![remove last method before deletion](/data-structure/assets/images/Figure3.2a.PNG) |
+|:--:|
+| *Before the node is deleted from the end of the list.* |
+<br>
 
 Variations of Linked Lists
 
