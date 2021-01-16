@@ -1,4 +1,8 @@
 # Linked List 
+# Table of Content:
+[Inserting Nodes](#insertion)
+
+
 # What is a linked list?
 
 Linked list is a data structure implemented using a **linked structure** to store data values in a collection of nodes. Usually, each node contains an element and a reference to the next node in an sequential order of the list. Then each node of the list is linked to its next neighbor node, from the head to the tail and any number of nodes in between, except the last (tail) node is pointed to null so it can end the list, as shown in Figure 1. 
@@ -40,8 +44,8 @@ For example, here's a code snippet to initialize the head and tail to null becau
   Node tail = null;
 ```
 
-
-## Step 3: Inserting Nodes 
+# Insertion
+## Step 3: Inserting Nodes
 
 There are three methods that can be inserted a new node into a linked list, as describe in below examples:
 
