@@ -1,11 +1,14 @@
 # Linked List 
-|Table of Content:                           |
+|Table of Contents:                          |
 | ------------------------------------------ |
 | [Inserting Nodes](#step-3-inserting-nodes) |
 | [addFirst(data)](#1-addfirstdata)          |
 | [addLast(data)](#2-addlastdata)            |
 | [add(index, data)](#3-addindex-data)       |
 | [Deleting Nodes](#step-4-deleting-nodes)   |
+| [removeFirst()](#1-removefirst)            |
+| [removeLast()](#2-removelast)              |
+| [remove(index)](#3-removeindex)            |
 
 # What is a linked list?
 
