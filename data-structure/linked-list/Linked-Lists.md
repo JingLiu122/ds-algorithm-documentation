@@ -183,7 +183,7 @@ This method inserts an element into the list at the specified index. However the
 
 ## Step 4: Deleting Nodes
 
-Removing nodes from the linked list is done by a similar approach as inserting nodes into it. 
+Removing nodes from a linked list can be done by a similar approach as inserting. 
 
 ### Code snippet to implement deletion methods:
 #### 1. removeFirst()
@@ -200,10 +200,9 @@ Removing nodes from the linked list is done by a similar approach as inserting n
     }
   }
 ```
-This method removes the element of the first node from the list. But first, there two cases need to be considered:
+This method removes the element of the first node from the list. But first, there are two cases need to be considered:
 1) If the list is empty, there is nothing to delete, so return `-1` for indication.
-2) Otherwise, remove the first node from the list by simply pointing `head` to the second node (`head.next`). But first we need to create a `temp` node to keep the first node of the list temporarily. If when the list becomes empty after a node we just remove, that means there is only one node in the list to remove, then set the tail to `null`. Reduce the size by 1 and finally return the deleted element. 
-shown in Figure 2.3c.
+2) Otherwise, remove the first node from the list by simply pointing `head` to the second node (`head.next`). But first we need to create a `temp` node to keep the first node of the list temporarily, as shown in Figure 3.1b. If when the list becomes empty after a node we just removed, that means there was only one node in the list, then set the tail to `null`. Reduce the size by 1 and finally return the deleted element. 
 
 #### Figure 2.3: Better visual explanation to add a new element in the middle of the list.
 ##### Figure 2.3a
