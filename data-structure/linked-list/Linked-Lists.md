@@ -3,6 +3,8 @@
 
 Linked list is a data structure implemented using a **linked structure** to store data values in a collection of nodes. Usually, each node contains an element and a reference to the next node in an sequential order of the list. Then each node of the list is linked to its next neighbor node, from the head to the tail and any number of nodes in between, except the last (tail) node is pointed to null so it can end the list, as shown in Figure 1. 
 
+How to traverse a linked list?
+
 ## Step 1: Node Implementation
 
 Linked list node is an object which contains an **element** and a **next** reference node, so it can be created from a class defined as follows in Java:
@@ -90,8 +92,8 @@ First, this method creates a new node to store the element and inserts the node 
   }
 ```
 This method creates a new node to hold the element and appends at the end of the list. While inserting, there are two cases that need to be considered in here: 
-(1) If it is an empty list, set both set and tail points to this new node, as shown in Fiure 2.2.1a and Figure 2.2.1b.
-(2) Otherwise, link this new node with the last (tail) node in the list. Then set `tail` points to this new node, so this node becomes the last node of the list (shown in Figure 2.2.2a to Figure 2.2.2d).
+1) If it is an empty list, set both set and tail points to this new node, as shown in Fiure 2.2.1a and Figure 2.2.1b.
+2) Otherwise, link this new node with the last (tail) node in the list. Then set `tail` points to this new node, so this node becomes the last node of the list (shown in Figure 2.2.2a to Figure 2.2.2d).
 Finally, in any the cases, after the node is created, increase the size by 1.
 
 #### Figure 2.2: Better visual explanation to add a new element at the end of the list.
@@ -155,9 +157,9 @@ Finally, in any the cases, after the node is created, increase the size by 1.
   }
 ```
 This method inserts an element into the list at the specified index. However there are three cases that need to be considered when inserting: 
-(1) If `index` is 0, then the element is going to be inserted at the beginning of the list, invoke `addFirst(data)` to do the work. 
-(2) If `index` is greater than or equal to the size of the list, then insert the element at the end of the list, invoke `addLast(data)` this time.
-(3) Otherwise, create a new node to hold the new element and insert it in the middle of the list (at a specific index -- zero-based indexing like in the array). As shown in Figure 2.3a, locate the current node of a specific index position that is going to insert a new element node, and store it to the `temp` node for reference. Then insert it into the list by linking the previous node (`prevNode`) of the located current node to this new node (`newNode`), and then `newNode` links to `temp` to chain them together as a new linked list, as shown in Figure 2.3b. The final result is shown in Figure 2.3c. Finally, increase the size of the list by 1.
+1) If `index` is 0, then the element is going to be inserted at the beginning of the list, invoke `addFirst(data)` to do the work. 
+2) If `index` is greater than or equal to the size of the list, then insert the element at the end of the list, invoke `addLast(data)` this time.
+3) Otherwise, create a new node to hold the new element and insert it in the middle of the list (at a specific index -- zero-based indexing like in the array). As shown in Figure 2.3a, locate the current node of a specific index position that is going to insert a new element node, and store it to the `temp` node for reference. Then insert it into the list by linking the previous node (`prevNode`) of the located current node to this new node (`newNode`), and then `newNode` links to `temp` to chain them together as a new linked list, as shown in Figure 2.3b. The final result is shown in Figure 2.3c. Finally, increase the size of the list by 1.
 
 #### Figure 2.3: Better visual explanation to add a new element in the middle of the list.
 ##### Figure 2.3a
@@ -198,9 +200,10 @@ Removing nodes from the linked list is done by a similar approach as inserting n
     }
   }
 ```
-This method removes the first node from the list. But first, there two cases need to be considered:
+This method removes the element of the first node from the list. But first, there two cases need to be considered:
 1) If the list is empty, there is nothing to delete, so return `-1` for indication.
-2) Otherwise, remove the first node from the list by simply pointing `head` to the second node (`head.next`). But first we need to create a `temp` node to keep the first node of the list temporarily. If when the list becomes empty after a node we just remove, that means there is only one node in the list to remove, then set the tail to `null`. Reduce the size by 1 and finally return the deleted element. shown in Figure 2.3c.
+2) Otherwise, remove the first node from the list by simply pointing `head` to the second node (`head.next`). But first we need to create a `temp` node to keep the first node of the list temporarily. If when the list becomes empty after a node we just remove, that means there is only one node in the list to remove, then set the tail to `null`. Reduce the size by 1 and finally return the deleted element. 
+shown in Figure 2.3c.
 
 #### Figure 2.3: Better visual explanation to add a new element in the middle of the list.
 ##### Figure 2.3a
@@ -228,20 +231,24 @@ This method removes the first node from the list. But first, there two cases nee
       }
       
       Node temp = tail;
-      tail = prevNode;    // previous node of the last node 
+      tail = prevNode;    // previous node of the last node (the second-to-last node)
       tail.next = null;
       size--;
       return temp.element;
     }
   }
 ```
+This method removes the element of the last node from the list. There are three cases need to be considered in here:
+1) If the list is empty, return `-1`.
+2) If the list contains only one node, return the element of this node and then destory it by set both `head` and `tail` point to null; Java garbage collection handles the work over here. Then the size of the list becomes 0 after the deletion. 
+3) Otherwise, traverse the list to locate the second-to-last node and reposition `tail` to point to this node, and then set the next of the tail node to null to end the list. Finally, reduce the size by 1 and return the element of the deleted node.  
 
 #### 3. remove(index)
 ```java
   public String remove(index) {
     if(index < 0 || index >= size) return '-1';
     else if(index == 0) return removeFirst();
-    else if(index == size-1) return removeLast();
+    else if(index == size - 1) return removeLast();
     else {
       Node prevNode = head;
       
@@ -249,11 +256,33 @@ This method removes the first node from the list. But first, there two cases nee
         prevNode = prevNode.next;
       }
       
-      Node temp = prevNode.next;
+      Node temp = prevNode.next;   // current node
       prevNode.next = temp.next;
       size--;
       return temp.element;
     }
   }
 ```
-next neighbor node
+This method finds the node at the specified index and then removes it. Consider four cases over here:
+1) Check the edge cases: if `index` is negative or beyond the range of the list (`index` is zero-based, and `size` is the length of the list like an array), return `-1`.
+2) If `index` is 0, invoke `removeFirst()` to remove the first node from the list.
+3) If `index` is the end position of the list, which is `size - 1`, then invoke `removeLast` to remove the last node from the list. 
+4) Otherwise, traverse the list and locate the node at the specified `index`. Then let `temp` denote this current node that is going to delete, which is `prevNode.next` in the list., as shown in Figure. Next, link the previous node `next` to the current node's next nrighbor, which is to assign `temp.next` to `prevNode.next` to destroy the current node, as shown in Figure. Finally, reduce the size by 1 and return the element of the deleted node.  
+
+
+
+Variations of Linked Lists
+
+
+
+
+
+
+
+
+
+
+
+
+
+
