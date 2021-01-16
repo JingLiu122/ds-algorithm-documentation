@@ -204,11 +204,17 @@ This method removes the element of the first node from the list. But first, ther
 1) If the list is empty, there is nothing to delete, so return `-1` for indication.
 2) Otherwise, remove the first node from the list by simply pointing `head` to the second node (`head.next`). But first we need to create a `temp` node to keep the first node of the list temporarily, as shown in Figure 3.1b. If when the list becomes empty after a node we just removed, that means there was only one node in the list, then set the tail to `null`. Reduce the size by 1 and finally return the deleted element. 
 
-#### Figure 2.3: Better visual explanation to add a new element in the middle of the list.
-##### Figure 2.3a
-| ![add method before insertion](/data-structure/assets/images/Figure2.3a.PNG) |
+#### Figure 3.1: Better visual explanation to remove the first node from the list.
+##### Figure 3.1a
+| ![remove first method before deletion](/data-structure/assets/images/Figure3.1a.PNG) |
 |:--:|
-| *Before a new node is inserted at a specified index position.* |
+| *Before the node is deleted from the beginning of the list.* |
+<br>
+
+##### Figure 3.1b
+| ![remove first method after deletion](/data-structure/assets/images/Figure3.1b.PNG) |
+|:--:|
+| *After the node is deleted from the beginning of the list.* |
 <br>
 
 
@@ -240,7 +246,26 @@ This method removes the element of the first node from the list. But first, ther
 This method removes the element of the last node from the list. There are three cases need to be considered in here:
 1) If the list is empty, return `-1`.
 2) If the list contains only one node, return the element of this node and then destory it by set both `head` and `tail` point to null; Java garbage collection handles the work over here. Then the size of the list becomes 0 after the deletion. 
-3) Otherwise, traverse the list to locate the second-to-last node and reposition `tail` to point to this node, and then set the next of the tail node to null to end the list. Finally, reduce the size by 1 and return the element of the deleted node.  
+3) Otherwise, traverse the list to locate the second-to-last node and reposition `tail` to point to this node, and then set the next of the tail node to null to end the list, as shown in Figure 3.2b. Finally, reduce the size by 1 and return the element of the deleted node. 
+
+#### Figure 3.2: Better visual explanation to remove the last node from the list.
+##### Figure 3.2a
+| ![remove last method before deletion](/data-structure/assets/images/Figure3.2a.PNG) |
+|:--:|
+| *Before the node is deleted from the end of the list.* |
+<br>
+
+##### Figure 3.2b
+| ![remove last method during deletion](/data-structure/assets/images/Figure3.2b.PNG) |
+|:--:|
+| *Delete the last node from the list.* |
+<br>
+
+##### Figure 3.2c
+| ![remove last method after deletion](/data-structure/assets/images/Figure3.2c.PNG) |
+|:--:|
+| *After the node is deleted from the end of the list.* |
+<br>
 
 #### 3. remove(index)
 ```java
