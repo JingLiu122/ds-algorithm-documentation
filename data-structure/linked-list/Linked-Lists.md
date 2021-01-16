@@ -1,8 +1,7 @@
 # Linked List 
 # Table of Content:
-* [Inserting Nodes](#insertion)
 * [Inserting Nodes](#step-3-inserting-nodes)
-* [Deleting Nodes](#deletion)
+* [Deleting Nodes](#step-4-deleting-nodes)
 
 # What is a linked list?
 
@@ -186,7 +185,6 @@ This method inserts an element into the list at the specified index. However the
 | *After a new node is inserted at a specified index position.* |
 <br>
 
-# Deletion
 ## Step 4: Deleting Nodes
 
 Removing nodes from a linked list can be done by a similar approach as inserting. 
