@@ -2,19 +2,14 @@
 |Table of Contents:                          |
 | ------------------------------------------ |
 | [Inserting Nodes](#step-3-inserting-nodes) |
-| [addFirst(data)](#1-addfirstdata)          |
-| [addLast(data)](#2-addlastdata)            |
-| [add(index, data)](#3-addindex-data)       |
+| <table> <thead> <tr>Insertion methods</tr> </thead> <tbody> <tr> <td>[addFirst(data)](#1-addfirstdata)</td> </tr>  <tr> <td>[addLast(data)](#2-addlastdata)</td> </tr>  <tr> <td>[add(index, data)](#3-addindex-data)</td> </tr> </tbody> </table> |
 | [Deleting Nodes](#step-4-deleting-nodes)   |
-| [removeFirst()](#1-removefirst)            |
-| [removeLast()](#2-removelast)              |
-| [remove(index)](#3-removeindex)            |
+| <table> <thead> <tr>Deletion methods</tr> </thead> <tbody> <tr> <td>[removeFirst()](#1-removefirst)</td> </tr>  <tr> <td>[removeLast()](#2-removelast)</td> </tr>  <tr> <td>[remove(index)](#3-removeindex)</td> </tr> </tbody> </table> |
 
 # What is a linked list?
 
 Linked list is a data structure implemented using a **linked structure** to store data values in a collection of nodes. Usually, each node contains an element and a reference to the next node in an sequential order of the list. Then each node of the list is linked to its next neighbor node, from the head to the tail and any number of nodes in between, except the last (tail) node is pointed to null so it can end the list, as shown in Figure 1. 
 
-How to traverse a linked list?
 
 ## Step 1: Node Implementation
 
@@ -323,8 +318,38 @@ This method finds the node at the specified index and then removes it. Consider 
 | *After the node is deleted.* |
 <br>
 
-# Variations of Linked Lists
-The linked list introcuded in the preceding examples is known as singly linked list. There's also doubly linked list, circular linked list, and circular doubly linked list.
+
+# Appendix
+
+## Traverse all nodes in the list
+### Use while loop
+```java
+  Node current = head;
+  while(current != null) {
+    System.out.println(current.element);
+    current = current.next;
+  }
+```
+<br>
+
+### Use for loop
+```java 
+  Node current = head;
+  for(int i = 0; i < size-1; i++) {
+    System.out.println(current.element);
+    current = current.next;
+  }
+```
+<br>
+
+## Variations of Linked Lists
+* **Singly linked list**: contains a pointer to the list's first node, and each node contains a pointer to the next node sequentially.
+* **Circular, singly linked list**: like a singly linked list, except that the pointer of the last node points back to the first node. 
+  1) *Note*: `tail` is not needed for circular linked lists.
+  2) A good application in circular linked list is in the operating system that serves multiple users in a timesharing fashion. The system picks a user from a circular list and grants a small amount of CPU time, then moves on to the next user in the list.
+* **Doubly linked list**: contains node with two pointers. One points to the next node and the other to the previous node (*forward pointer* and *backward pointer*).
+  1) A doubly linked list can be traversed forward and backward.
+* **Circular, doubly linked list**: like a doubly linked list, except that the forward pointer of the last node points to the first node and the backward pointer of the first pointer points to the last node. 
 
 
 
