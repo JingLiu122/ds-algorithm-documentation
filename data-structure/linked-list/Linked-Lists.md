@@ -2,9 +2,9 @@
 |Table of Contents:                          |
 | ------------------------------------------ |
 | [Inserting Nodes](#step-3-inserting-nodes) |
-| <table> <thead> <tr>Insertion methods</tr> </thead> <tbody> <tr> <td>[addFirst(data)](#1-addfirstdata)</td> </tr>  <tr> <td>[addLast(data)](#2-addlastdata)</td> </tr>  <tr> <td>[add(index, data)](#3-addindex-data)</td> </tr> </tbody> </table> |
+| <table> <thead> </thead> <tbody> <tr> <td>[addFirst(data)](#1-addfirstdata)</td> </tr>  <tr> <td>[addLast(data)](#2-addlastdata)</td> </tr>  <tr> <td>[add(index, data)](#3-addindex-data)</td> </tr> </tbody> </table> |
 | [Deleting Nodes](#step-4-deleting-nodes)   |
-| <table> <thead> <tr>Deletion methods</tr> </thead> <tbody> <tr> <td>[removeFirst()](#1-removefirst)</td> </tr>  <tr> <td>[removeLast()](#2-removelast)</td> </tr>  <tr> <td>[remove(index)](#3-removeindex)</td> </tr> </tbody> </table> |
+| <table> <thead> </thead> <tbody> <tr> <td>[removeFirst()](#1-removefirst)</td> </tr>  <tr> <td>[removeLast()](#2-removelast)</td> </tr>  <tr> <td>[remove(index)](#3-removeindex)</td> </tr> </tbody> </table> |
 
 # What is a linked list?
 
